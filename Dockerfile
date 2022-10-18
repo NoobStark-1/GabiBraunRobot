@@ -64,12 +64,12 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/GabiBraunRobot
-RUN git clone -b shiken https://github.com/HuntingBots/GabiBraunRobot /root/GabiBraunRobot
+# Copy Python Requirements to /root/FallenRobot
+RUN git clone https://github.com/Falco-Grice/GabiBraunRobot /root/GabiBraunRobot
 WORKDIR /root/GabiBraunRobot
 
-#Copy config file to /root/GabiBraunRobot/GabiBraunRobot
-COPY ./GabiBraunRobot/sample_config.py ./GabiBraunRobot/config.py* /root/GabiBraunRobot/GabiBraunRobot/
+#Copy config file to /root/FallenRobot/FallenRobot
+COPY ./GabiBraunRobot/config.py ./FallenRobot/config.py* /root/GabiBraunRobot/GabiBraunRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -77,4 +77,12 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","GabiBraunRobot"]
+CMD ["python3","-m","FallenRobot"]
+
+
+
+
+
+
+
+
